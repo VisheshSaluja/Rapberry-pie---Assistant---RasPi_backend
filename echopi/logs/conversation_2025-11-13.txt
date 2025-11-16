@@ -1,0 +1,5 @@
+[16:27:24] USER: Hello Echo Pie, how are you today?
+[16:27:24] ECHOPI: I'm doing well, thanks for asking. It's not every day I get to chat with someone new! How about you?
+
+
+
