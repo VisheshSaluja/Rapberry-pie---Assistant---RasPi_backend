@@ -52,11 +52,9 @@ It runs entirely on a Raspberry Pi, acting as the brain of the device.
 
 ## Testing
 #### You can test the backend using:
-WebSocket test extensions
-
-CURL for REST endpoints
-
-Svelte UI frontend in the other repo
+- WebSocket test extensions
+- CURL for REST endpoints
+- Svelte UI frontend in the other repo
 
 ## ARCHITECTURE DIAGRAM
                            ┌────────────────────────┐
