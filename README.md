@@ -57,3 +57,35 @@ WebSocket test extensions
 CURL for REST endpoints
 
 Svelte UI frontend in the other repo
+
+## ARCHITECTURE DIAGRAM
+                           ┌────────────────────────┐
+                           │      FRONTEND (Mac)    │
+                           │        Svelte UI        │
+                           │  - Displays notes       │
+                           │  - Pomodoro UI          │
+                           │  - Real-time updates    │
+                           └───────────┬────────────┘
+                                       │ WebSocket
+                                       │ (Bi-directional)
+                                       ▼
+                      ┌───────────────────────────────────┐
+                      │         BACKEND (Raspberry Pi)     │
+                      │                 Go                 │
+                      │────────────────────────────────────│
+                      │  WebSocket Server                  │
+                      │  Notes Module                      │
+                      │  Pomodoro Module                   │
+                      │  Whisper STT Integration           │
+                      │  Piper TTS Integration             │
+                      │  Ollama LLM Integration            │
+                      └───────────┬───────────────┬────────┘
+                                  │               │
+                       Audio Out  │               │  Audio In
+                       (Speaker)  │               │  (Mic)
+                                  ▼               ▼
+                         ┌──────────────┐   ┌──────────────┐
+                         │  Piper TTS   │   │   Whisper     │
+                         │ (Text→Audio) │   │ (Audio→Text)  │
+                         └──────────────┘   └──────────────┘
+
