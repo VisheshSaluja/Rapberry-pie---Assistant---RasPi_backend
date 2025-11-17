@@ -64,26 +64,30 @@ It runs entirely on a Raspberry Pi, acting as the brain of the device.
                            │  - Pomodoro UI          │
                            │  - Real-time updates    │
                            └───────────┬────────────┘
-                                       │ WebSocket
-                                       │ (Bi-directional)
-                                       ▼
-                      ┌───────────────────────────────────┐
-                      │         BACKEND (Raspberry Pi)     │
-                      │                 Go                 │
-                      │────────────────────────────────────│
-                      │  WebSocket Server                  │
-                      │  Notes Module                      │
-                      │  Pomodoro Module                   │
-                      │  Whisper STT Integration           │
-                      │  Piper TTS Integration             │
-                      │  Ollama LLM Integration            │
-                      └───────────┬───────────────┬────────┘
-                                  │               │
-                       Audio Out  │               │  Audio In
-                       (Speaker)  │               │  (Mic)
-                                  ▼               ▼
-                         ┌──────────────┐   ┌──────────────┐
-                         │  Piper TTS   │   │   Whisper     │
-                         │ (Text→Audio) │   │ (Audio→Text)  │
-                         └──────────────┘   └──────────────┘
+                                       │ WebSocket     <--------------------
+                                       │ (Bi-directional)                  |
+                                       ▼                                   |
+                      ┌───────────────────────────────────┐                |
+                      │         BACKEND (Raspberry Pi)     │               |
+                      │                 Go                 │               |
+                      │────────────────────────────────────│               |
+                      │  WebSocket Server                  │               |
+                      │  Notes Module                      │               |
+                      │  Pomodoro Module                   │               |
+                      │  Whisper STT Integration           │               |
+                      │  Piper TTS Integration             │               |
+                      │  Ollama LLM Integration            │               |
+                      └───────────┬───────────────┬────────┘               |
+                                  │               │                        |
+                       Audio Out  │               │  Audio In              |
+                       (Speaker)  │               │  (Mic)                 |
+                                  ▼               ▼                        |
+                         ┌──────────────┐   ┌──────────────┐               |
+                         │  Piper TTS   │   │   Whisper    │               |
+                         │ (Text→Audio) │   │ (Audio→Text) │               |
+                         └──────────────┘   └──────────────┘               |
+                                 |__________________|                      |
+                                           |                               |
+                                           |                               |
+                                           |_______________________________|
 
